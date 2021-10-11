@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --very-dark-blue :  hsl(233, 47%, 7%);
+    --dark-desaturated-blue : hsl(244, 38%, 16%);
+    --soft-violet : hsl(277, 64%, 61%);
+
+    --white : hsl(0, 0%, 100%);
+    --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white-stat : hsla(0, 0%, 100%, 0.6)
+}
+html {
+    font-size: 15px;
+    color : var(--white);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--very-dark-blue);
+}
+// body{
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     flex-direction: column;
+//     align-content: center;
+// }
+.card {
+    background-color: var(--dark-desaturated-blue);
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 85%;
+    margin: 5% auto;
+    //max-height: 40%;
+    .hero {
+        max-width: 55%;
+        padding: 60px;
+        //padding-right: 60px;
+        .title {
+            .insight{
+                color: var(--soft-violet);
+            }
+        }
+        .content{
+            opacity: 0.6;
+            margin: 15px 0 50px 0;
+            font-weight: lighter;
+            line-height: 30px;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 20rem;
+            .ft{
+                opacity: 0.6;
+                font-weight: lighter;
+                font-size: 9px;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+    .img-container {
+        min-width: 40%;
+        position: relative;
+        .overlay {
+            background-color: var(--soft-violet);
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            z-index: 1;
+            position: absolute;
+
+        }
+        .img {
+            max-width: 30rem;
+            height: 100%;
+        }
+        .mobile{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width : 720px) {
+    .card{
+        flex-direction: column-reverse;
+        .hero {
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+            .footer {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+                margin: 10px auto;
+                width: auto;
+                height: 130px;
+                .ft{
+                    margin: 0 auto;
+
+                }
+            }
+        }
+        .img-container {
+            width: 100%;
+            .mobile {
+                display: block;
+                //width: 40rem;
+                width: 100%;
+                //height: ;
+            }
+            .large {
+                display: none;
+            }
+        }
+        
+    }
+}
